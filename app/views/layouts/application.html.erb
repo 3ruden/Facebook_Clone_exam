@@ -10,10 +10,6 @@
   </head>
 
   <body>
-    <% flash.each do |key, message| %>
-      <%= content_tag(:div, message, class: "#{key}") %>
-    <% end %>
-
     <% if logged_in? %>
       <%= link_to "プロファイル", user_path(current_user.id) %>
       <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
