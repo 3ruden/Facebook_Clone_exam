@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :forbid_login_user, only: %i(new create)
   def new
     @user = User.new
   end
