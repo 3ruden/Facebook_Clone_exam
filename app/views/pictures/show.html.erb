@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @picture.image.url %>
-</p>
+<div class="row">
+  <div class="thumbnail">
+    <%= image_tag @picture.image.url %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @picture.content %>
-</p>
+    <div class="caption">
+      <p>
+        <%= @picture.content %>
+      </p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+      <%= link_to '編集する', edit_picture_path(@picture), class: 'btn btn-default' %>
+      <%= link_to '戻る', pictures_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>
