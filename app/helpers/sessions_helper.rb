@@ -20,7 +20,7 @@ module SessionsHelper
   end
 
   def ensure_correct_user
-    if current_user.id != params[:id].to_i
+    unless current_user.pictures.ids.include?(params[:id].to_i)
       redirect_to pictures_url, notice: "権限がありあせん"
     end
   end
